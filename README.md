@@ -1,13 +1,14 @@
 # Reactive-DAG-Engine
 
-Implementa un sistema que simule un grafo acíclico dirigido (DAG) de tareas asincrónicas dependientes entre sí, donde cada nodo es una función asíncrona que depende de otras. El sistema debe:
+Este proyecto implementa un sistema que simula un Grafo Acíclico Dirigido (DAG) de tareas asíncronas con dependencias entre sí. Cada nodo representa una función asíncrona que puede depender de otras para ejecutarse.
 
-Resolver la ejecución de las tareas en el orden correcto (respetando dependencias).
+✅ Características
+🔁 Ejecución en orden correcto: Las tareas se resuelven respetando sus dependencias.
 
-Ejecutar las tareas de forma paralela cuando no tengan dependencias entre sí.
+⚡ Paralelismo inteligente: Las tareas sin dependencias se ejecutan en paralelo.
 
-Detectar ciclos y errores en la definición del DAG.
+🚫 Detección de ciclos y errores: El sistema identifica ciclos en el grafo y errores de definición.
 
-Retornar el resultado de todas las tareas al finalizar, ordenado por identificador.
+📦 Resultados ordenados: Devuelve un objeto con los resultados de todas las tareas, ordenado por identificador.
 
-Ser completamente funcional y no depender de clases ni estados mutables externos.
+🧼 Diseño funcional: No utiliza clases ni estados mutables externos; todo está basado en funciones puras.
