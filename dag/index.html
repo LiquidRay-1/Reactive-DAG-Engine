@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DAG Task Runner</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1><span class="highlight">DAG</span> Task Runner</h1>
+    <div id="graph"></div>
+    <textarea id="taskInput">{
+  "A": { "deps": [], "fn": "async () => 1" },
+  "B": { "deps": ["A"], "fn": "async (r) => r.A + 2" },
+  "C": { "deps": ["A"], "fn": "async (r) => r.A * 3" },
+  "D": { "deps": ["B", "C"], "fn": "async (r) => r.B + r.C" }
+}</textarea>
+    <button onclick="runGraph()">🚀 Ejecutar DAG</button>
+    <h3>Resultado:</h3>
+    <pre id="output"></pre>
+  </div>
+</body>
+</html>
